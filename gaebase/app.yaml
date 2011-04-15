@@ -1,0 +1,20 @@
+application: gaebase
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /static_content
+  static_dir: pybasecamp/static_content/
+  
+- url: /images
+  static_dir: pybasecamp/static_content/images
+  
+- url: /javascript
+  static_dir: pybasecamp/static_content/javascript
+  
+- url: /stylesheet
+  static_dir: pybasecamp/static_content/stylesheet
+
+- url: /.*
+  script: main.py
