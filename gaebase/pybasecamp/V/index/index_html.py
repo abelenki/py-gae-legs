@@ -24,6 +24,9 @@ def get_html(self):
 			<span style="font-weight:bold;">py-gae-legs</span> have been initiated<br/>
 		    <img src="/images/py-gae-legs-logo.jpg" alt="py-gae-legs not available"/>
 		  </div><br/>
+	          <div style="text-align:center;">
+	            <a href="/phonebook">MVC Example ~ Phonebook</a>
+	         </div>
 		  <div>
 		    get ready to walk on Python developer legs<br/>
 		    in the grounds of Gogle AppEngine<br/>

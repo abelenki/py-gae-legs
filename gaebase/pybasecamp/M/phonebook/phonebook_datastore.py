@@ -5,30 +5,22 @@
 # index_html : it's py-gae-legs' default created index html py file
 ##
 
-def get_headers(self):
-  headers={"Content-Type":"text/html"}
-  return headers 
+from google.appengine.ext import db
 
-def get_html(self):
-  return """<html>
-    <head>
-	  <title>py-gae-legs ~ PhoneBook</title>
-	</head>
-	<body>
-	  <div style="text-align:center;">
-		  <div style="font-size:27px;">PhoneBook</div>
-		  <div>
-			<span style="font-weight:bold;">CRUD Pages</span>
-		  </div><br/>
-		  <div>
-		    <a href="/V/phonebook/create">Create 'PhoneBook' Entry</a><br/>
-		    <a href="/V/phonebook/read">Read Entire 'PhoneBook'</a><br/>
-		    <a href="/V/phonebook/update">Update 'PhoneBook' Entry</a>
-		    <a href="/V/phonebook/delete">Delete 'PhoneBook' Entry</a>
-		  </div>
-	  </div><br/><br/>
-	  <div style="text-align:center;">
-	    <a href="/">Homepage</a>
-	  </div>
-	</body>
-  </html>"""
+
+class Phonebook(db.Model):
+  id_ = db.IntegerProperty(required=True)
+  timestamp_ = db.DateTimeProperty(auto_now_add=True)
+  name = db.StringProperty(required=True)
+  phonenumber = db.PhoneNumberProperty(required=False)
+  email = db.EmailProperty(required=False)
+  description = db.StringProperty(multiline=True)
+  
+  """ will be trying for auto_id
+  def query_counter (q, cursor=None, limit=500):
+    if cursor:
+      q.with_cursor (cursor)
+    count = q.count (limit=limit)
+    if count == limit:
+      return count + query_counter (q, q.cursor (), limit=limit)
+    return count"""

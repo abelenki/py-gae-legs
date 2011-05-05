@@ -5,6 +5,12 @@
 # zdebug : it's py-gae-legs' default created stats/debug/log handler
 ##
 
+  
+def show_my_dict_(dict_,title):
+  ret_val = "<div><b>" + str(title) + "</b><br/>"
+  ret_val = ret_val + str(dict_) + "<br/></div>"
+  return ret_val
+
 def get_headers(self):
   headers={"Content-Type":"text/html"}
   return headers 
@@ -16,17 +22,8 @@ def get_(self):
     </head>
     <body>
       <div class="debug_mode_info" style="text-align:center;">
-	  """
-  response = response + str(self.request.path_qs)
-  response = response + "<br/>Path: " + str(self.request.path)
-  response = response + "<br/>Path URL: " + str(self.request.path_url)
-  response = response + "<br/>Host: " + str(self.request.host)
-  response = response + "<br/>Host URL: " + str(self.request.host_url)
-  response = response + "<br/>App URL: " + str(self.request.application_url)
-  response = response + "<br/>Body: " + str(self.request.body)
-  response = response + "<br/>Body File: " + str(self.request.body_file)
-  response = response + "<br/>Query String: " + str(self.request.query_string)
-  response = response + "<br/>Query Vars: " + str(self.request.queryvars)
+      """
+  response = response + show_my_dict_(self.request,"Request")
   response = response + "<br/>Query Value for 'id' would be at str(self.request.queryvars['id'])"
   from google.appengine.api import users
   user=users.get_current_user()
@@ -37,16 +34,16 @@ def get_(self):
     self.redirect(users.create_login_url(self.request.uri))
   import os
   response = response + "<br/>dir(os): " + str(dir(os))
-  response = response + "<br/>Current Working Dir: " + str(os.getcwd())
+  response = response + "<br/><br/><b>Current Working Dir: " + str(os.getcwd()) + "<br/></b>"
   import sys
   response = response + "<br/>dir(sys): " + str(dir(sys))
-  response = response + "<br/>Current Platform: " + str(sys.platform)
-  response = response + "<br/><br/>" + str(dir(self.request))
+  response = response + "<br/><br/><b>Current Platform: " + str(sys.platform) + "<br/></b>"
   response = response + """
-	  </div><br/><br/>
-	  <div style="text-align:center;">
-	    <a href="/">Back To MainPage</a>
-	  </div>
+    </div><br/><br/>
+    <div style="text-align:center;">
+      <a href="/">Back To MainPage</a>
+    </div>
     </body>
   </html>"""
   return response
+  

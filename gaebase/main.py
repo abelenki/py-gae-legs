@@ -27,7 +27,7 @@ class MainHandler(webapp.RequestHandler):
     
   def post(self):
     self.response.headers = pygaelegs_cnc.camp_resheaders(self)
-    self.response.out.write(pygaelegs_cnc.camp_res_(self))
+    self.response.out.write(pygaelegs_cnc.campus_res_(self))
 
   
 class ErrLST(webapp.RequestHandler):
