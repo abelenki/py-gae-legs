@@ -12,7 +12,6 @@ def get_headers(self):
   return headers 
 
 def get_html(self):
-  all_records = str(phonebook_main._read_datastore(self))
   response= """<html>
     <head>
 	  <title>py-gae-legs</title>
@@ -20,7 +19,23 @@ def get_html(self):
 	<body>
 	  <div style="text-align:center;">
             <div style="font-size:27px;">Phonebook Records</div>
-	    <br/>""" + all_records + """<br/><br/>
+	    <br/>""" + str(phonebook_main._readform_datastore(self)) + """<br/><br/>
+	  <div style="text-align:center;">
+	    <a href="/phonebook">Phonebook</a>
+	  </div>
+	</body>
+  </html>"""
+  return response
+
+def get_list_html(self):
+  response= """<html>
+    <head>
+	  <title>py-gae-legs</title>
+	</head>
+	<body>
+	  <div style="text-align:center;">
+            <div style="font-size:27px;">Phonebook Records</div>
+	    <br/>""" + str(phonebook_main._read_list_datastore(self)) + """<br/><br/>
 	  <div style="text-align:center;">
 	    <a href="/phonebook">Phonebook</a>
 	  </div>

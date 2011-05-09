@@ -9,7 +9,7 @@ from google.appengine.ext import db
 
 
 class Phonebook(db.Model):
-  id_ = db.IntegerProperty(required=True)
+  #id_ = db.IntegerProperty(required=True)
   timestamp_ = db.DateTimeProperty(auto_now_add=True)
   name = db.StringProperty(required=True)
   phonenumber = db.PhoneNumberProperty(required=False)

@@ -5,45 +5,24 @@
 # index_html : it's py-gae-legs' default created index html py file
 ##
 
-def get_headers(self):
-  headers={"Content-Type":"text/html"}
-  return headers 
+from phonebook_datastore import Phonebook
+from . import phonebook_form
 
-def get_html(self):
-  return """<html>
-    <head>
-	  <title>py-gae-legs</title>
-	</head>
-	<body>
-	  <div style="text-align:center;">
-		  <div style="font-size:27px;">py-gae-legs</div>
-		  <div>
-		    <a href="https://github.com/abhishekkr/py-gae-legs">py-gae-legs repo @ github</a>
-		  </div><br/>
-		  <div>
-			<span style="font-weight:bold;">py-gae-legs</span> have been initiated
-		  </div><br/>
-		  <div>
-		    get ready to walk on Python developer legs<br/>
-		    in the grounds of Gogle AppEngine<br/>
-		    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br/>
-		    it's a small project for python developers to use Google AppEngine...<br/>
-		    not an effective spoon-feeder as Rails<br/>
-		    but would enable you to quickly walk on your Legs<br/>
-		    in the feature rich ground of GAE<br/>
-		    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br/>
-		    it's just an initial release...<br/>
-		    slowly more web productivity and all the features from GAE<br/>
-		    will get added to it<br/>
-		    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br/>
-		    AbhishekKr ~ ABK ~ aBionic<br/>
-		    <a href="http://www.twitter.com/aBionic">http://www.twitter.com/aBionic</a><br/>
-		    <a href="http://github.com/abhishekkr">http://github.com/abhishekkr</a><br/>
-		    <a href="http://abhishekkr.wordpress.com">http://abhishekkr.wordpress.com</a>
-		  </div>
-	  </div><br/><br/>
-	  <div style="text-align:center;">
-	    <a href="/zdebug">see if debug page is working</a>
-	  </div>
-	</body>
-  </html>"""
+#import phonebook_datastore as dstore
+  
+def delete_(self):
+  try:
+    requested_res = self.request.path_qs
+    record_key = requested_res.split("/")[-1]
+    if(record_key):
+      record_= Phonebook.get(record_key)
+      ret_val = phonebook_form.static_form_(self, record_key)
+    ret_status = (" [[Record has been Deleted]]" if (record_.delete()==None) else " [[Failure Deleting Record]]" ) + " <br/>~~~~~~~~~~<br/> "
+    ret_val = ret_status + ret_val
+  except Exception:
+    ret_val = "<div>Failure: Deletion of record has failed.</div>"
+  return ret_val
+  
+def delete_list_(self):
+  return phonebook_form.static_list_(self, "delete")
+  
