@@ -4,7 +4,6 @@
 #
 # index_html : it's py-gae-legs' default created index html py file
 ##
-
 from .. import phonebook_main
 
 def get_headers(self):
