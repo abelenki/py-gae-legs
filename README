@@ -1,22 +1,33 @@
 py-gae-legs
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-get ready to walk on Python developer legs in the grounds of Gogle AppEngine
+||^|| \\ //    ||^^    /|\   ||^    ||  ||^ ||^^  ||^^ 
+||_||  \!/  __ || __  //_\\  ||= __ ||  ||= || __  \\
+||    _//      ||_/| //   \\ ||_    ||_ ||_ ||_/| __||
 
--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-it's a small project for python developers to use Google AppEngine... not as spoon-feeder as Rails but would enable you to quickly walk on your Legs in the feature rich ground of GAE
+get ready to walk on Python developer legs in the GAE grounds
 
-it's just an initial release... slowly more web productivity and all the features from GAE will get added to it
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-CURRENTLY: I'm building a stable & required structure for all web features... once it's done, I'll proceed with Automated Generator Scripts.
+it's a small project for python developers to use Google AppEngine... 
+enabling you to quickly walk on your Legs in this feature rich ground
+
+it's just an initial release... 
+slowly more productivity and all features from GAE will get added here
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+CURRENTLY: 
+I'm building a stable & required structure for all web features... 
+once it's done, I'll proceed with Automated Generator Scripts.
 Right now, it's mid-way 'mvc' structure.
 
--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 AbhishekKr ~ ABK ~ aBionic
-
 http://www.twitter.com/aBionic
-
 http://github.com/abhishekkr
-
 http://abhishekkr.wordpress.com
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
