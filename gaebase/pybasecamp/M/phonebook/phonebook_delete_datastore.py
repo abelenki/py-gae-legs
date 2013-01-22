@@ -9,7 +9,7 @@ from phonebook_datastore import Phonebook
 from . import phonebook_form
 
 #import phonebook_datastore as dstore
-  
+
 def delete_(self):
   try:
     requested_res = self.request.path_qs
@@ -22,7 +22,7 @@ def delete_(self):
   except Exception:
     ret_val = "<div>Failure: Deletion of record has failed.</div>"
   return ret_val
-  
+
 def delete_list_(self):
   return phonebook_form.static_list_(self, "delete")
-  
+
